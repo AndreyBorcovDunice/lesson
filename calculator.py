@@ -4,7 +4,6 @@ import os
 from datetime import datetime
 
 
-
 def calculation():
     ''' calculate functions '''
     while True:
@@ -50,5 +49,8 @@ def calculation():
         except Exception as e:
             print(f'Произошла ошибка: {e}')
             continue
+
+
+
 
 calculation()
