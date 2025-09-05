@@ -3,6 +3,8 @@ import json
 import os
 from datetime import datetime
 
+
+
 def calculation():
     ''' calculate functions '''
     while True:
@@ -29,15 +31,18 @@ def calculation():
                         result = num1 // num2
                 print(result)
                 dat = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                result = {result, expression, dat}
-                new_entry = result
-                file_path = "/home/dunice/Directory/Calculator/calc.json"
+                file_path = "calc.json"
+                resultt = {
+                    "результат": result,
+                    "выражение": expression,
+                    "дата_время": dat
+                }
                 if os.path.exists(file_path):
                     with open(file_path, "r", encoding="utf-8") as file:
                         history = json.load(file)
                 else:
                     history = []
-                history.append(new_entry)
+                history.append(resultt)
                 with open (file_path, "w", encoding="utf-8") as file:
                     json.dump(history, file, ensure_ascii=False, indent=4)
             else:
